@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call Center Company Payroll System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .payroll-summary {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Background designs and animation */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://source.unsplash.com/1920x1080/?office-work') repeat;
+      opacity: 0.3;
+      z-index: -1;
+      animation: backgroundAnimation 40s linear infinite;
+    }
+
+    @keyframes backgroundAnimation {
+      from {
+        background-position: 0 0;
+      }
+      to {
+        background-position: 100% 100%;
+      }
+    }
+
+    .icon-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    .icon-container i {
+      color: #007bff;
+      font-size: 30px;
+      margin: 5px;
+      animation: iconAnimation 2s ease-in-out infinite;
+    }
+
+    @keyframes iconAnimation {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 style="margin: 0;">Company Payroll System</h1>
+  </header>
+
+  <div class="icon-container">
+    <i class="fas fa-briefcase"></i>
+    <i class="fas fa-file-invoice-dollar"></i>
+    <i class="fas fa-chart-bar"></i>
+    <i class="fas fa-users"></i>
+    <i class="fas fa-cogs"></i>
+  </div>
+
+  <form id="payroll-form" onsubmit="return false;">
+    <label for="employee-name">Employee Name:</label>
+    <input type="text" id="employee-name" name="employeeName" placeholder="text" required>
+
+    <label for="pay-rate">Pay Rate (per hour):</label>
+    <input type="number" id="pay-rate" name="payRate" placeholder="add" required>
+
+    <label for="hours-worked">Hours Worked:</label>
+    <input type="number" id="hours-worked" name="hoursWorked" placeholder="add" required>
+
+    <label for="health-insurance">Health Insurance:</label>
+    <input type="number" id="health-insurance" name="healthInsurance" placeholder="add" required>
+
+    <label for="dental-insurance">Dental Insurance:</label>
+    <input type="number" id="dental-insurance" name="dentalInsurance" placeholder="add" required>
+
+    <button type="button" id="calculate-payroll">Calculate Payroll</button>
+  </form>
+
+  <div class="payroll-summary" id="payroll-summary"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="payroll.js"> </script>
+</body>
+</html>
