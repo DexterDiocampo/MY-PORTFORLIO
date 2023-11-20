@@ -4,7 +4,7 @@ document.getElementById('login-button').addEventListener('click', () => {
 
     // Simple example of username and password validation
     if (
-(username === 'Dexter' && password === '120722') ||
+(username === 'Dexter' && password === 'Diocampo') ||
 (username === 'Ricky' && password === 'Gacutan') ||
 (username === 'Waljo' && password === 'Minerva') ||
 (username === 'Admin' && password === 'Admin')
